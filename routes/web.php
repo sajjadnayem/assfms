@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\DonorController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Volunteer\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
+Route::get('/crisis', [AdminController::class, 'Crisis']);
+Route::get('/create/crisis',[AdminController::class, 'CreateCrisis']);
+Route::get('/registration', [DonorController::class, 'Registration']);
+Route::get('/donorlogin', [DonorController::class, 'DonorLogin']);
+Route::get('/volunteer/registration', [VolunteerController::class, 'Registration']);
+Route::get('volunteerlogin', [VolunteerController::class, 'VolunteerLogin']);

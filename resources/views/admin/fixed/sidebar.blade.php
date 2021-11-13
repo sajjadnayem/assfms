@@ -7,17 +7,41 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <a class="nav-link" data-toggle="collapse" href="#submenu" aria-expanded="false" aria-controls="auth">
           <i class="icon-head menu-icon"></i>
-          <span class="menu-title">User Pages</span>
+          <span class="menu-title">Admin</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="auth">
+        <div class="collapse" id="submenu">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Create Crisis </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Verify Payment </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Manage Volunteer </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Manage Donor </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('/crisis')}}"> Crisis </a></li>
+            <li class="nav-item"> <a class="nav-link" href=""> Report</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#submenu1" aria-expanded="false" aria-controls="auth">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Donor</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="submenu1">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{url('/registration')}}"> Donor Profile </a></li>
+            <li class="nav-item"> <a class="nav-link" href=""> Donation</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="auth">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Volunteer</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="submenu2">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{url('/volunteer/registration')}}"> Volunteer Profile </a></li>
+            <li class="nav-item"> <a class="nav-link" href=""> Distribution</a></li>
           </ul>
         </div>
       </li>
@@ -36,18 +60,6 @@
         </div>
       </li> --}}
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-          <i class="icon-columns menu-icon"></i>
-          <span class="menu-title">Form elements</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="form-elements">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
           <i class="icon-bar-graph menu-icon"></i>
           <span class="menu-title">Charts</span>
@@ -55,7 +67,7 @@
         </a>
         <div class="collapse" id="charts">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+            <li class="nav-item"> <a class="nav-link" href="">ChartJs</a></li>
           </ul>
         </div>
       </li>
@@ -67,7 +79,7 @@
         </a>
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+            <li class="nav-item"> <a class="nav-link" href="">Basic table</a></li>
           </ul>
         </div>
       </li>
@@ -79,7 +91,7 @@
         </a>
         <div class="collapse" id="icons">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="">Mdi icons</a></li>
           </ul>
         </div>
       </li>
@@ -91,8 +103,8 @@
         </a>
         <div class="collapse" id="error">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+            <li class="nav-item"> <a class="nav-link" href=""> 404 </a></li>
+            <li class="nav-item"> <a class="nav-link" href=""> 500 </a></li>
           </ul>
         </div>
       </li>
