@@ -6,6 +6,8 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
+
+      <!--for admin-->
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#submenu" aria-expanded="false" aria-controls="auth">
           <i class="icon-head menu-icon"></i>
@@ -19,6 +21,9 @@
           </ul>
         </div>
       </li>
+
+
+      <!--for Donar-->
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#submenu1" aria-expanded="false" aria-controls="auth">
           <i class="icon-head menu-icon"></i>
@@ -32,6 +37,8 @@
           </ul>
         </div>
       </li>
+
+      <!--for Volunteer-->
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="auth">
           <i class="icon-head menu-icon"></i>
