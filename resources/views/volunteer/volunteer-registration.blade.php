@@ -37,7 +37,7 @@
         <h1>Registration Form</h1>
         <p>Please fill in this form to create an account</p>
         <hr>
-        <form>
+        <!--<form>-->
             <div class="form-group">
               <label for="name">Enter your name</label>
               <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name Here" required>

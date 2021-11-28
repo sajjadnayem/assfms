@@ -17,6 +17,9 @@ class CreateCrisesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
+            $table->string('details');
+            $table->string('location');
+            $table->double('phn_number');
             $table->double('amount');
             $table->timestamps();
         });

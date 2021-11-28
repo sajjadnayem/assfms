@@ -25,11 +25,13 @@ class AdminController extends Controller
     {
         //dd($request->all());
         Crisis::create([
-            'id'=>$request->id,
             'name'=>$request->name,
             'type'=>$request->type,
+            'details'=>$request->details,
+            'location'=>$request->location,
+            'phn_number'=>$request->phn_number,
             'amount'=>$request->amount,
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'crisis has been created successfully');
     }
 }

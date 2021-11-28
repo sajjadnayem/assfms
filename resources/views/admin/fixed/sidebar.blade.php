@@ -32,8 +32,8 @@
         </a>
         <div class="collapse" id="submenu1">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{url('/registration')}}"> Donor Profile </a></li>
-            <li class="nav-item"> <a class="nav-link" href=""> Donation</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('donor.profile')}}"> Donor Profile </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('donor.donation')}}"> Donation</a></li>
           </ul>
         </div>
       </li>
@@ -123,3 +123,4 @@
       </li>
     </ul>
   </nav> 
+  

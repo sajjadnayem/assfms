@@ -30,7 +30,7 @@
                                 <button type="button" class="btn btn-primary">Submit</button>
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="registration" class="text-info">Register here</a>
+                                <a href="" class="text-info">Register here</a>
                             </div>
                         </form>
                     </div>

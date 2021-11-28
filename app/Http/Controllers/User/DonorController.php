@@ -7,12 +7,20 @@ use Illuminate\Http\Request;
 
 class DonorController extends Controller
 {
-    public function Registration()
+    public function DonorProfile()
     {
-        return view('user.registration');
+        return view('donor.donor-profile');
     }
-    public function DonorLogin()
+    public function Donation()
     {
-        return view('user.donorlogin');
+        return view('donor.donation');
+    }
+    public function CreateDonation()
+    {
+        return view('donor.create-donation');
+    }
+    public function ViewDonation()
+    {
+        return view('donor.view-donation');
     }
 }

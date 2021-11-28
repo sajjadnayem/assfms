@@ -1,40 +1,31 @@
 @extends('master')
 @section('content')
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    </head>
-    <style>
-        table, th, td{
-            border: 1px solid  black;
-        }
-    </style>
-    <body>
-        <h1>View Crisis</h1>
-        <hr>
-        <table class="table" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Crisis Name</th>
-                    <th>Crisis Type</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($crisislist as $item)
+    <h2>Crisis List</h2>
+    <table class="table table-light" style="width:100%">
+        <thead><tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Location</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Target Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach ($crisislist as $key=>$item)
                     <tr>
-                        <th>{{$item->id}}</th>
-                        <th>{{$item->name}}</th>
-                        <th>{{$item->type}}</th>
-                        <th>{{$item->amount}}</th>
-                    </tr>
+                    <th scope="row">{{$key+1}}</th>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->type}}</td>
+                    <td>{{$item->details}}</td>
+                    <td>{{$item->location}}</td>
+                    <td>{{$item->phn_number}}</td>
+                    <td>{{$item->amount}}</td> 
+                    </tr>   
                 @endforeach
-            </tbody>
-        </table>
-    </body>
-    </html>
+            </tr>
+        </tbody>
+    </table>
 @endsection

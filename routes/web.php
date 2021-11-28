@@ -22,8 +22,18 @@ Route::get('/', function () {
 Route::get('/crisis', [AdminController::class, 'Crisis']);
 Route::get('/create/crisis',[AdminController::class, 'CreateCrisis']);
 Route::get('/view/crisis', [AdminController::class, 'ViewCrisis'])->name('crisis.view');
-Route::get('/registration', [DonorController::class, 'Registration']);
-Route::get('/donorlogin', [DonorController::class, 'DonorLogin']);
+Route::post('/crisis/store', [AdminController:: class, 'CrisisStore'])->name('crisis.store');
+
+
+// Route::get('donor/registration', [DonorController::class, 'Registration']);
+// Route::get('/donorlogin', [DonorController::class, 'DonorLogin']);
+Route::get('/donor/profile', [DonorController::class, 'DonorProfile'])->name('donor.profile');
+Route::get('/donation', [DonorController::class, 'Donation'])->name('donor.donation');
+Route::get('/create/donation', [DonorController:: class, 'CreateDonation'])->name('donor.createdonation');
+Route::get('/view/donation', [DonorController::class, 'ViewDonation'])->name('donor.viewdonation');
+
+
+
 Route::get('/volunteer/registration', [VolunteerController::class, 'Registration']);
 Route::get('volunteerlogin', [VolunteerController::class, 'VolunteerLogin']);
-Route::post('/crisis/store', [AdminController:: class, 'CrisisStore'])->name('crisis.store');
+
