@@ -28,9 +28,13 @@ Route::post('/crisis/store', [AdminController:: class, 'CrisisStore'])->name('cr
 // Route::get('donor/registration', [DonorController::class, 'Registration']);
 // Route::get('/donorlogin', [DonorController::class, 'DonorLogin']);
 Route::get('/donor/profile', [DonorController::class, 'DonorProfile'])->name('donor.profile');
+Route::get('/donor/create_Profile', [DonorController::class, 'CreateDonor'])->name('donor.createprofile');
+Route::get('/donor/view_profile', [DonorController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
+Route::post('/store/donor', [DonorController::class, 'StoreDonor'])->name('store.donor');
 Route::get('/donation', [DonorController::class, 'Donation'])->name('donor.donation');
 Route::get('/create/donation', [DonorController:: class, 'CreateDonation'])->name('donor.createdonation');
 Route::get('/view/donation', [DonorController::class, 'ViewDonation'])->name('donor.viewdonation');
+Route::post('/store/donation', [DonorController::class, 'StoreDonation'])->name('store.donation');
 
 
 

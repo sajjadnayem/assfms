@@ -2,8 +2,28 @@
 
 
 @section('content')
+<h2>Donation Form</h2>
+<hr>
+@if(session()->has('success'))
+<p class="alert alert-success">
+  {{session()->get('success')}}
+</p>
+@endif
 
-<form>
+@if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>
+                  {{$error}}
+                </li>   
+              @endforeach
+            </ul>
+          </div>
+@endif
+
+<form action="{{route('store.donation')}}" method="POST">
+  @csrf
     <div class="form-group">
       <label for="name" style="font-size:20px;"><b>Full Name</label></b>
       <input type="text" class="form-control" id="name"  placeholder="Enter Full Name" name="name">
