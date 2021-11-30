@@ -23,6 +23,14 @@ class AdminController extends Controller
     }
     public function CrisisStore(Request $request)
     {
+        //for validation
+        $request->validate([
+            'name'=>'required',
+            'type'=>'required',
+            'amount'=>'required',
+            'details'=>'required',
+            'location'=>'required',
+        ]);
         //dd($request->all());
         Crisis::create([
             'name'=>$request->name,

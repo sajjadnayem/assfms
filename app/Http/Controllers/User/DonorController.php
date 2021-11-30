@@ -28,6 +28,15 @@ class DonorController extends Controller
     }
     public function StoreDonation(Request $request)
     {
+        //for validation
+         $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phn_number'=>'required',
+            'type'=>'required',
+            'amount'=>'required',
+        ]);
+        //dd($req->all());
         Donation::create([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -50,8 +59,17 @@ class DonorController extends Controller
     }
     public function StoreDonor(Request $request)
     {
+        //for validation
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'city'=>'required',
+            'occupation'=>'required',
+            'phn_number'=>'required',
+        ]);
+        // dd($req->all());
         Donor::create([
-
             'name'=>$request->name,
             'email'=>$request->email, 
             'address'=>$request->address,

@@ -38,6 +38,8 @@ Route::post('/store/donation', [DonorController::class, 'StoreDonation'])->name(
 
 
 
-Route::get('/volunteer/registration', [VolunteerController::class, 'Registration']);
-Route::get('volunteerlogin', [VolunteerController::class, 'VolunteerLogin']);
+Route::get('volunteerprofile', [VolunteerController:: class, 'VolunteerProfile'])->name('volunteer.profile');
+Route::get('/create/volunteer', [VolunteerController::class, 'CreateVolunteer'])->name('create.volunteer');
+Route::get('/view/volunteer', [VolunteerController::class, 'ViewVolunteer'])->name('view.volunteer');
+Route::post('/store/volunteer', [VolunteerController::class, 'StoreVolunteer'])->name('store.volunteer');
 

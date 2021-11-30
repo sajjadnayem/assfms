@@ -47,7 +47,7 @@
         </a>
         <div class="collapse" id="submenu2">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{url('/volunteer/registration')}}"> Volunteer Profile </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('volunteer.profile')}}"> Volunteer Profile </a></li>
             <li class="nav-item"> <a class="nav-link" href=""> Distribution</a></li>
           </ul>
         </div>
