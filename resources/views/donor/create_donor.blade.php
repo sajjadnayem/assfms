@@ -20,8 +20,8 @@
               </div>
   @endif
 
-  
-    <form action="{{route('store.donor')}}" method="POST">
+
+    <form action="{{route('store.donor')}}" method="POST" enctype="multipart/form-data">
         @csrf
           <div class="form-group">
             <label for="name" style="font-size:20px;"><b>Full Name</label></b>

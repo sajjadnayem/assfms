@@ -12,6 +12,7 @@
                 <th scope="col">Phone Number</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Occupation</th>
+                <th scope="col">Image</th>
               </tr>
         </thead>
         @foreach($donorlist as $key=>$item)
@@ -24,7 +25,7 @@
           <td>{{$item->phn_number}}</td>
           <td>{{$item->gender}}</td>
           <td>{{$item->occupation}}</td>
-          {{-- <td><img src="{{url('/uploads/donors/'.$item->image)}}" style="border-radius: 4px;" width= "100px;" alt="donor image"> </td> --}}
+          <td><img src="{{url('/uploads/donors/'.$item->image)}}" style="border-radius: 4px;" width= "100px;" alt="donor image"> </td>
         </tr>
         @endforeach
       </tbody>

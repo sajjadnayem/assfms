@@ -5,7 +5,7 @@
         <thead><tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Type</th>
+            <th scope="col">Category</th>
             <th scope="col">Description</th>
             <th scope="col">Location</th>
             <th scope="col">Contact Number</th>
@@ -18,7 +18,7 @@
                     <tr>
                     <th scope="row">{{$key+1}}</th>
                     <td>{{$item->name}}</td>
-                    <td>{{$item->type}}</td>
+                    <td>{{$item->category->name}}</td>
                     <td>{{$item->details}}</td>
                     <td>{{$item->location}}</td>
                     <td>{{$item->phn_number}}</td>

@@ -52,6 +52,20 @@
           </ul>
         </div>
       </li>
+
+      <!--for crisis category-->
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="auth">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Crisis Category</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="submenu2">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route('category.list')}}">Categroy List </a></li>
+          </ul>
+        </div>
+      </li>
       {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-layout menu-icon"></i>

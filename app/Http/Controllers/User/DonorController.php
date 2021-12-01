@@ -59,6 +59,16 @@ class DonorController extends Controller
     }
     public function StoreDonor(Request $request)
     {
+        //for image upload
+        $image_name=null;
+        //step 1: check image exist in this request.
+        if($request->hasFile('donor_image'))
+         // step 2: generate file name
+        {
+            $image_name=date('Ymdhis').'.'. $request->file('donor_image')->getClientOriginalExtension();
+             //step 3 : store into project directory
+            $request->file('donor_image')->storeAs('/donors',$image_name);
+        }
         //for validation
         $request->validate([
             'name'=>'required',
@@ -77,7 +87,7 @@ class DonorController extends Controller
             'phn_number'=>$request->phn_number,
             'gender'=>$request->gender,
             'occupation'=>$request->occupation,
-            // 'image'=>$image_name,
+            'image'=>$image_name,
         ]);
         return redirect()->back()->with('success','Donor has registered successfully.');
     }

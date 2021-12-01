@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-    <table class="table table-light" style="width:100%"> 
+    <table class="table table-hover table-light" style="width: 100%"> 
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -14,6 +14,7 @@
         <th scope="col">Educational Background</th>
         <th scope="col">Phone Number</th>
         <th scope="col">Crisis Type</th>
+        <th scope="col">Image</th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
             <td>{{$item->education}}</td>
             <td>{{$item->phn_number}}</td>
             <td>{{$item->type}}</td>
+            <td><img src="{{url('/uploads/volunteers/'.$item->image)}}" style="border-radius:4px" width="100px" alt="volunteer image"></td>
             </tr> 
         @endforeach
     </tbody>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\User\DonorController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Volunteer\VolunteerController;
@@ -42,4 +43,10 @@ Route::get('volunteerprofile', [VolunteerController:: class, 'VolunteerProfile']
 Route::get('/create/volunteer', [VolunteerController::class, 'CreateVolunteer'])->name('create.volunteer');
 Route::get('/view/volunteer', [VolunteerController::class, 'ViewVolunteer'])->name('view.volunteer');
 Route::post('/store/volunteer', [VolunteerController::class, 'StoreVolunteer'])->name('store.volunteer');
+
+
+//for categoryController
+Route::get('/create/category', [CategoryController::class, 'CreateCategory'])->name('create.category');
+Route::get('category/list', [CategoryController::class, 'CategoryList'])->name('category.list');
+Route::post('/store/category', [CategoryController::class, 'StoreCategory'])->name('store.category');
 
