@@ -67,7 +67,7 @@ class DonorController extends Controller
         {
             $image_name=date('Ymdhis').'.'. $request->file('donor_image')->getClientOriginalExtension();
              //step 3 : store into project directory
-            $request->file('donor_image')->storeAs('/donors',$image_name);
+            $request->file('donor_image')->storeAs('/uploads/donors',$image_name);
         }
         //for validation
         $request->validate([

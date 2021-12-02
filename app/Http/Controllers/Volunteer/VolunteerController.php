@@ -15,13 +15,12 @@ class VolunteerController extends Controller
   }
   public function CreateVolunteer()
   {
-      $categorylist = Category::all();
-      return view('volunteer.create_volunteer', compact('categorylist'));
+      return view('volunteer.create_volunteer');
   }
   public function ViewVolunteer()
   {
-     $crisislist= Crisis::with('category')->get();
-     return view('volunteer.view_volunteer', compact('crisislist'));
+    $volunteerlist = Volunteer::all();
+     return view('volunteer.view_volunteer', compact('volunteerlist'));
   }
   public function StoreVolunteer(Request $request)
   {
@@ -39,29 +38,26 @@ class VolunteerController extends Controller
         }
       //for validation
     $request->validate([
-        'name'=>'required',
-        'email'=>'required',
-        'address'=>'required',
-        'age'=>'required',
-        'occupation'=>'required',
-        'phn_number'=>'required',
-        'type'=>'required',
+      'name'=>'required',
+      'email'=>'required',
+      'address'=>'required',
+      'age'=>'required',
+      'occupation'=>'required',
+      'phn_number'=>'required',
+      
     ]);
     //dd($request->all());
     Volunteer::create([
-        'name'=>$request->name,
-        'email'=>$request->email,
-        'city'=>$request->city,
-        'address'=>$request->address,
-        'gender'=>$request->gender,
-        'age'=>$request->age,
-        'occupation'=>$request->occupation,
-        'education'=>$request->education,
-        'phn_number'=>$request->phn_number,
-        'type'=>$request->type,
-        'image'=>$image_name,
-
-
+      'name'=>$request->name,
+      'email'=>$request->email,
+      'city'=>$request->city,
+      'address'=>$request->address,
+      'gender'=>$request->gender,
+      'age'=>$request->age,
+      'occupation'=>$request->occupation,
+      'education'=>$request->education,
+      'phn_number'=>$request->phn_number,
+      'image'=>$image_name,
     ]);
     return redirect()->back()->with('success','Volunteer has registered successfully.');
   }

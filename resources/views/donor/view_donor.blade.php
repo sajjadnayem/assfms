@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
     <h2>View All Registered Donors</h2>
+    <hr>
+    <div style="overflow-x: scroll;">
     <table class="table table-light" style="width:100%">
         <thead>
             <tr>
@@ -15,6 +17,7 @@
                 <th scope="col">Image</th>
               </tr>
         </thead>
+        <tbody>
         @foreach($donorlist as $key=>$item)
         <tr>
           <th scope="row">{{$key+1}}</th>
@@ -30,4 +33,6 @@
         @endforeach
       </tbody>
     </table>
+    
+  </div>
 @endsection
