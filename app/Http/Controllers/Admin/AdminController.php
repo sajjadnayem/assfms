@@ -26,11 +26,12 @@ class AdminController extends Controller
         return view('admin.pages.view-crisis' , compact('crisislist'));
     }
     public function CrisisStore(Request $request)
-    {
+    { 
+        // dd($request->all());
         //for validation
         $request->validate([
             'name'=>'required',
-            'type'=>'required',
+            'category'=>'required',
             'amount'=>'required',
             'details'=>'required',
             'location'=>'required',
@@ -38,7 +39,7 @@ class AdminController extends Controller
         //dd($request->all());
         Crisis::create([
             'name'=>$request->name,
-            'category_id'=>$request->category,
+            'type'=>$request->category,
             'details'=>$request->details,
             'location'=>$request->location,
             'phn_number'=>$request->phn_number,

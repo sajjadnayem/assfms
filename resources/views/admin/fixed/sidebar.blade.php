@@ -16,7 +16,7 @@
         </a>
         <div class="collapse" id="submenu">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{url('/crisis')}}"> Crisis </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('manage.crisis')}}"> Crisis </a></li>
             <li class="nav-item"> <a class="nav-link" href=""> Report</a></li>
           </ul>
         </div>
