@@ -31,11 +31,11 @@
     
     <!--content goes here-->
     
-    <div class="container">
+    
     
     @yield('content')
     
-    </div>
+    
     
     
     

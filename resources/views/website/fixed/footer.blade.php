@@ -6,8 +6,8 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo d-flex">
                         <a class="navbar-brand align-items-center" href="index-2.html">
-                            Love<small>Care</small>
-                            <span>Charity Theme</span>
+                            As<small>Sunnah</small>
+                            <span>Foundation</span>
                         </a>
                     </h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
@@ -61,7 +61,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="mb-0" style="font-size: 14px;">Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank" rel="nofollow noopener">Colorlib</a></p>
+                    <p class="mb-0" style="font-size: 14px;">Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | Developed By <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank" rel="nofollow noopener">Sajjad Hossain Nayem</a></p>
                 </div>
             </div>
         </div>

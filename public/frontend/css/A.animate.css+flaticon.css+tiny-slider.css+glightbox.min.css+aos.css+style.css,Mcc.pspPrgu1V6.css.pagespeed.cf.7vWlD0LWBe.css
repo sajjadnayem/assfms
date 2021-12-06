@@ -4176,7 +4176,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
   color: rgba(0, 0, 0, 0.8);
   color: #39311d;
   font-weight: 400;
-  font-family: "Patrick Hand", cursive; }
+  font-family: Arial, Helvetica, sans-serif; }
 
 .ftco-navbar-light {
   background: black;
@@ -4224,7 +4224,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
     padding-right: 25px;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
-    font-family: "Patrick Hand", cursive;
+    font-family: Arial, Helvetica, sans-serif, cursive;
     letter-spacing: 1px; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link span {
       position: relative;
