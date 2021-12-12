@@ -34,7 +34,7 @@ class VolunteerController extends Controller
 
              //step 3 : store into project directory
 
-            $request->File('volunteer_image')->storeAs('/volunteers',$image_name);
+            $request->File('volunteer_image')->storeAs('/uploads/volunteers',$image_name);
         }
       //for validation
     $request->validate([

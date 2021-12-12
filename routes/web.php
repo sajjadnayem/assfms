@@ -34,10 +34,10 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/function', function(){
         return view('master');
     })->name('home');
-    Route::get('/', [AdminController::class, 'Crisis'])->name('manage.crisis');
-    Route::get('/create/crisis',[AdminController::class, 'CreateCrisis'])->name('crisis.create');
-    Route::get('/view/crisis', [AdminController::class, 'ViewCrisis'])->name('crisis.view');
-    Route::post('/crisis/store', [AdminController:: class, 'CrisisStore'])->name('crisis.store');
+    Route::get('/', [AdminController::class, 'Cause'])->name('manage.cause');
+    Route::get('/create/cause',[AdminController::class, 'CreateCause'])->name('cause.create');
+    Route::get('/view/cause', [AdminController::class, 'ViewCause'])->name('cause.view');
+    Route::post('/cause/store', [AdminController:: class, 'StoreCause'])->name('cause.store');
 
 
     // Route::get('donor/registration', [DonorController::class, 'Registration']);

@@ -3,7 +3,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Crisis;
+use App\Models\Cause;
+// use App\Models\Crisis;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,39 +12,48 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
-    public function Crisis()
+    public function Cause()
     {
-        return view('admin.pages.crisis');
+        return view('admin.pages.cause');
     }
-    public function CreateCrisis()
+    public function CreateCause()
     {
         $categorylist = Category::all();
-        return view ('admin.pages.create-crisis', compact('categorylist'));
+        return view ('admin.pages.create-cause', compact('categorylist'));
     }
-    public function ViewCrisis()
+    public function ViewCause()
     {
-        $crisislist= Crisis::with('category')->get();
-        return view('admin.pages.view-crisis' , compact('crisislist'));
+        $causeslist= Cause::with('category')->get();
+        return view('admin.pages.view-cause' , compact('causeslist'));
     }
-    public function CrisisStore(Request $request)
+    public function StoreCause(Request $request)
     { 
-        // dd($request->all());
+
+        $image_name=null;
+        if($request->hasfile('cause_image'))
+        {
+            $image_name=date('Ymdhis').'.'.$request->file('cause_image')->getClientOriginalExtension();
+            $request->file('cause_image')->storeAs('/uploads/causes',$image_name);
+
+        }
+        //dd($request->all());
         //for validation
         $request->validate([
             'name'=>'required',
-            'category'=>'required',
             'amount'=>'required',
             'details'=>'required',
             'location'=>'required',
         ]);
         //dd($request->all());
-        Crisis::create([
+        Cause::create([
             'name'=>$request->name,
-            'type'=>$request->category,
+            'category_id'=>$request->category,
             'details'=>$request->details,
             'location'=>$request->location,
             'phn_number'=>$request->phn_number,
             'amount'=>$request->amount,
+            'raised_amount'=>$request->raised_amount,
+             'image'=>$image_name,
         ]);
         return redirect()->back()->with('success', 'crisis has been created successfully');
     }

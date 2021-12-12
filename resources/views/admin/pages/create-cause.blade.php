@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-<h1>Create Crisis</h1>
+<h1>Create Causes</h1>
 <hr>
 
 @if (session()->has('success'))
@@ -21,12 +21,13 @@
       </ul>
     </div>
   @endif
-<form action={{route('crisis.store')}} method="POST">
+
+<form action={{route('cause.store')}} method="POST" enctype="multipart/form-data">
   @csrf
-    <div class="form-group">
-      <label for="name" style="font-size:20px;"><b>Crisis Name</label></b>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Crisis Name">
-    </div>
+  <div class="form-group">
+    <label for="name" style="font-size:20px;"><b>Cause Name</label></b>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Cause Name">
+  </div>
 
 
     <label for="type" style="font-size:20px;"><b>Select Crisis Type</label></b><br>
@@ -43,12 +44,9 @@
     </div>
 
     <div class="form-group">
-      <label for="name" style="font-size:20px;"><b>Crisis Description</label></b><br>
+      <label for="name" style="font-size:20px;"><b>Cause Description</label></b><br>
       <textarea id="details" class="form-control" name="details" rows="3" cols="50">
-      
         </textarea>
-     
-      
     </div>
 
     <div class="form-group">
@@ -67,7 +65,16 @@
       <input type="number" class="form-control" id="amount" placeholder="Enter Target Amount" name="amount">
     </div>
 
-    
+    <div class="form-group">
+      <label for="raised_amount" style="font-size:20px;"><b>Raised Amount</label></b>
+      <input type="number" class="form-control" id="raised_amount" placeholder="Enter Target Amount" name="raised_amount">
+    </div>
+
+    <div class="mb-3">
+      <label for="cause_image" class="form-label" style="font-size:20px;"><b>Insert Image</b></label>
+      <input class="form-control" type="file" id="cause_image" name="cause_image">
+    </div>
+
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 @endsection

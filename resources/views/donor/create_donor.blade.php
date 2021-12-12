@@ -49,7 +49,6 @@
           <div class="form-group">
             <label for="phn_number" style="font-size:20px;"><b>Phone Number</label></b>
             <input type="number" class="form-control" id="phn_number"  placeholder="Enter Phone Number" name="phn_number">
-           
           </div>
   
           

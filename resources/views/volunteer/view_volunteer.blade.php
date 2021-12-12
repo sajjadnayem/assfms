@@ -32,7 +32,7 @@
                 <td>{{$item->occupation}}</td>
                 <td>{{$item->education}}</td>
                 <td>{{$item->phn_number}}</td>
-                <td><img src="{{url('/volunteers/'.$item->image)}}" style="border-radius:4px" width="100px" alt="volunteer image"></td>
+                <td><img src="{{url('/uploads/volunteers/'.$item->image)}}" style="border-radius:4px" width="100px" alt="volunteer image"></td>
                 </tr> 
             @endforeach
         </tbody>
