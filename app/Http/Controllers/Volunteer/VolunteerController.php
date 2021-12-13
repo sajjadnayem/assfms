@@ -11,16 +11,16 @@ class VolunteerController extends Controller
 {
   public function VolunteerProfile()
   {
-      return view('volunteer.volunteer_profile');
+      return view('admin.volunteer.volunteer_profile');
   }
   public function CreateVolunteer()
   {
-      return view('volunteer.create_volunteer');
+      return view('admin.volunteer.create_volunteer');
   }
   public function ViewVolunteer()
   {
     $volunteerlist = Volunteer::all();
-     return view('volunteer.view_volunteer', compact('volunteerlist'));
+     return view('admin.volunteer.view_volunteer', compact('volunteerlist'));
   }
   public function StoreVolunteer(Request $request)
   {
