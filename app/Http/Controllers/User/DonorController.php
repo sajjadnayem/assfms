@@ -24,7 +24,7 @@ class DonorController extends Controller
     public function ViewDonation()
     {
         $donationlist=Donation::all();
-        return view('admin.donor.view-donation', compact('donationlist'));
+        return view('admin.donor.view-donationlist', compact('donationlist'));
     }
     public function StoreDonation(Request $request)
     {
@@ -47,7 +47,16 @@ class DonorController extends Controller
        ]);
        return redirect()->back()->with('success','Thanks For Your Donation');
     }
-
+    public function DonationView($donation_id)
+    {
+        $donation=Donation::find($donation_id);
+        return view('admin.donor.donation_view',compact('donation'));
+    }
+    public function DeleteDonation($donation_id)
+    {
+        Donation::find($donation_id)->delete();
+        return redirect()->back()->with('success','Donation info has been deleted');
+    }
     public function CreateDonor()
     {
         return view('admin.donor.create_donor');
@@ -55,7 +64,7 @@ class DonorController extends Controller
     public function ViewDonorProfile()
     {
         $donorlist = Donor::all();
-        return view('admin.donor.view_donor', compact('donorlist'));
+        return view('admin.donor.view_donorlist', compact('donorlist'));
     }
     public function StoreDonor(Request $request)
     {
@@ -90,5 +99,15 @@ class DonorController extends Controller
             'image'=>$image_name,
         ]);
         return redirect()->back()->with('success','Donor has registered successfully.');
+    }
+    public function DonorView($donor_id)
+    {
+        $donor = Donor::find($donor_id);
+        return view('admin.donor.view_donor_profile', compact('donor'));
+    }
+    public function DonorDelete($donor_id)
+    {
+        Donor::find($donor_id)->delete();
+        return redirect()->back()->with('success','Donor profile has been deleted');
     }
 }

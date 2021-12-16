@@ -46,10 +46,16 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/donor/create_Profile', [DonorController::class, 'CreateDonor'])->name('donor.createprofile');
     Route::get('/donor/view_profile', [DonorController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
     Route::post('/store/donor', [DonorController::class, 'StoreDonor'])->name('store.donor');
+    Route::get('/view/donorprofile/{donor_id}', [DonorController::class, 'DonorView'])->name('view.donor');
+    Route::get('/delete/donorprofile/{donor_id}',[DonorController::class,'DonorDelete'])->name('delete.donorprofile');
     Route::get('/donation', [DonorController::class, 'Donation'])->name('donor.donation');
     Route::get('/create/donation', [DonorController:: class, 'CreateDonation'])->name('donor.createdonation');
     Route::get('/view/donation', [DonorController::class, 'ViewDonation'])->name('donor.viewdonation');
     Route::post('/store/donation', [DonorController::class, 'StoreDonation'])->name('store.donation');
+    Route::get('/view/donation/{donation_id}',[DonorController::class,'DonationView'])->name('view.donation');
+    Route::get('/delete/donation/{donation_id}',[DonorController::class,'DeleteDonation'])->name('delete.donation');
+    
+    
 
 
 

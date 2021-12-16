@@ -1,4 +1,4 @@
-<footer class="ftco-footer img">
+<footer class="ftco-footer img" style="margin-top: 40px;">
     <div class="overlay"></div>
     <div class="container-xl">
         <div class="row mb-5 pb-lg-4 justify-content-between">

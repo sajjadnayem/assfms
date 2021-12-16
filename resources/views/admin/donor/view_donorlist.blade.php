@@ -2,6 +2,23 @@
 @section('content')
     <h2>View All Registered Donors</h2>
     <hr>
+    @if(session()->has('success'))
+<p class="alert alert-success">
+  {{session()->get('success')}}
+</p>
+@endif
+
+@if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>
+                  {{$error}}
+                </li>   
+              @endforeach
+            </ul>
+          </div>
+@endif
     <div style="overflow-x: scroll;">
     <table class="table table-light" style="width:100%">
         <thead>
@@ -15,6 +32,7 @@
                 <th scope="col">Gender</th>
                 <th scope="col">Occupation</th>
                 <th scope="col">Image</th>
+                <th scope="col">Action</th>
               </tr>
         </thead>
         <tbody>
@@ -29,6 +47,11 @@
           <td>{{$item->gender}}</td>
           <td>{{$item->occupation}}</td>
           <td><img src="{{url('/uploads/donors/'.$item->image)}}" style="border-radius: 4px;" width= "100px;" alt="donor image"> </td>
+          <td>
+            <a href="{{route('view.donor',$item->id)}}" class="btn btn-info">View</a>
+            <a href="" class="btn btn-success">Update</a>
+            <a href="{{route('delete.donorprofile', $item->id)}}" class="btn btn-danger">Delete</a>
+          </td>
         </tr>
         @endforeach
       </tbody>
