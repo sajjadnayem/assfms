@@ -61,4 +61,10 @@ class VolunteerController extends Controller
     ]);
     return redirect()->back()->with('success','Volunteer has registered successfully.');
   }
+  public function VolunteerView($volunteer_id)
+    {
+        $volunteer=Volunteer::find($volunteer_id);
+        return view('admin.volunteer.view_volunteer_profile',compact('volunteer'));
+
+    }
 }

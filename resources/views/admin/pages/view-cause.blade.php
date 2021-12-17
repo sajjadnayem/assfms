@@ -1,6 +1,23 @@
 @extends('master')
 @section('content')
     <h2>CauseS List</h2>
+    @if(session()->has('success'))
+    <p class="alert alert-success">
+      {{session()->get('success')}}
+    </p>
+    @endif
+    
+    @if ($errors->any())
+              <div class="alert alert-danger">
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>
+                      {{$error}}
+                    </li>   
+                  @endforeach
+                </ul>
+              </div>
+    @endif
     <div style="overflow-x: scroll;">
         <table class="table table-light" style="width:100%">
             <thead><tr>
@@ -28,9 +45,9 @@
                         <td>{{$item->amount}}</td>
                         <td><img src="{{url('/uploads/causes/'.$item->image)}}" style="border-radius:4px" width="100px" alt="causes image"></td> 
                         <td>
-                            <a href="" class="btn btn-info">View</a>
+                            <a href="{{route('view.cause', $item->id)}}" class="btn btn-info">View</a>
                             <a href="" class="btn btn-success">Update</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="{{route('delete.cause', $item->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                         </tr>   
                     @endforeach

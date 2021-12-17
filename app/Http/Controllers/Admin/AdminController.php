@@ -55,6 +55,17 @@ class AdminController extends Controller
             'raised_amount'=>$request->raised_amount,
              'image'=>$image_name,
         ]);
-        return redirect()->back()->with('success', 'crisis has been created successfully');
+        return redirect()->back()->with('success', 'Cause has been created successfully');
+    }
+    public function CauseView($cause_id)
+    {
+        $cause=Cause::find($cause_id);
+        return view('admin.pages.view_cause_details',compact('cause'));
+    
+    }
+    public function DeleteCause($cause_id)
+    {
+        Cause::find($cause_id)->delete();
+        return redirect()->back()->with('success',"Cause has been deleted");
     }
 }

@@ -1,6 +1,23 @@
 @extends('master')
 @section('content')
 <h2>View All Registered Volunteer</h2>
+@if(session()->has('success'))
+<p class="alert alert-success">
+  {{session()->get('success')}}
+</p>
+@endif
+
+@if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>
+                  {{$error}}
+                </li>   
+              @endforeach
+            </ul>
+          </div>
+@endif
 <hr>
     <div style="overflow-x: scroll">
       <table class="table table-hover table-light" style="width: 100%"> 
@@ -17,6 +34,7 @@
             <th scope="col">Educational Background</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Image</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -33,6 +51,11 @@
                 <td>{{$item->education}}</td>
                 <td>{{$item->phn_number}}</td>
                 <td><img src="{{url('/uploads/volunteers/'.$item->image)}}" style="border-radius:4px" width="100px" alt="volunteer image"></td>
+                <td>
+                  <a href="{{route('volunteer.view', $item->id)}}" class="btn btn-info">View</a>
+                  <a href="" class="btn btn-success">Update</a>
+                  <a href="" class="btn btn-danger">Delete</a>
+                </td>
                 </tr> 
             @endforeach
         </tbody>

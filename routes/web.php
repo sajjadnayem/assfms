@@ -38,6 +38,8 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/create/cause',[AdminController::class, 'CreateCause'])->name('cause.create');
     Route::get('/view/cause', [AdminController::class, 'ViewCause'])->name('cause.view');
     Route::post('/cause/store', [AdminController:: class, 'StoreCause'])->name('cause.store');
+    Route::get('/cause/view/details/{cause_id}',[AdminController::class,'CauseView'])->name('view.cause');
+    Route::get('/cause/delete/{cause_id}',[AdminController::class,'DeleteCause'])->name('delete.cause');
 
 
     // Route::get('donor/registration', [DonorController::class, 'Registration']);
@@ -63,6 +65,7 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/create/volunteer', [VolunteerController::class, 'CreateVolunteer'])->name('create.volunteer');
     Route::get('/view/volunteer', [VolunteerController::class, 'ViewVolunteer'])->name('view.volunteer');
     Route::post('/store/volunteer', [VolunteerController::class, 'StoreVolunteer'])->name('store.volunteer');
+    Route::get('/view/volunteerprofile/{volunteer_id}',[VolunteerController::class,'VolunteerView'])->name('volunteer.view');
 
 
     //for categoryController
