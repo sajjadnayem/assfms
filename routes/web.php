@@ -66,6 +66,7 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/view/volunteer', [VolunteerController::class, 'ViewVolunteer'])->name('view.volunteer');
     Route::post('/store/volunteer', [VolunteerController::class, 'StoreVolunteer'])->name('store.volunteer');
     Route::get('/view/volunteerprofile/{volunteer_id}',[VolunteerController::class,'VolunteerView'])->name('volunteer.view');
+    Route::get('/delete/volunteerprofile/{volunteer_id}',[VolunteerController::class,'DeleteVolunteer'])->name('delete.volunteer');
 
 
     //for categoryController

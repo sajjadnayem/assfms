@@ -54,7 +54,7 @@
                 <td>
                   <a href="{{route('volunteer.view', $item->id)}}" class="btn btn-info">View</a>
                   <a href="" class="btn btn-success">Update</a>
-                  <a href="" class="btn btn-danger">Delete</a>
+                  <a href="{{route('delete.volunteer', $item->id)}}" class="btn btn-danger">Delete</a>
                 </td>
                 </tr> 
             @endforeach

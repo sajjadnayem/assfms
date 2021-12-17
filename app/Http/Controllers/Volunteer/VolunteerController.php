@@ -65,6 +65,10 @@ class VolunteerController extends Controller
     {
         $volunteer=Volunteer::find($volunteer_id);
         return view('admin.volunteer.view_volunteer_profile',compact('volunteer'));
-
+    }
+    public function DeleteVolunteer($volunteer_id)
+    {
+        Volunteer::find($volunteer_id)->delete();
+        return redirect()->back()->with('success','Volunteer profile has been deleted.');
     }
 }
