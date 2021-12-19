@@ -11,8 +11,8 @@ class HomeController extends Controller
     {
         return view('website.fixed.home');
     }
-    public function Signup()
+    public function CreateDonor()
     {
-        return view('website.pages.signup');
+        return view('admin.donor.create_donor');
     }
 }

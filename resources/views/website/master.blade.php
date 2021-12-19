@@ -6,7 +6,7 @@
     <title>AsSunnah Foundation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" > --}}
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;family=Poppins:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{url('frontend/cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css')}}">
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.0//ionicons.min.css"> --}}
     <link rel="stylesheet" href="{{url('frontend/css/A.animate.css%2bflaticon.css%2btiny-slider.css%2bglightbox.min.css%2baos.css%2bstyle.css%2cMcc.pspPrgu1V6.css.pagespeed.cf.7vWlD0LWBe.css')}}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     
@@ -677,9 +678,9 @@
                         </footer> --}}
                         @include('website.fixed.footer')
                         <script src="{{url('frontend/js/bootstrap.bundle.min.js')}}"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+                        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
                         <script src="{{url('frontend/js/tiny-slider.js')}}"></script>
                         <script src="{{url('frontend/js/glightbox.min.js%2baos.js%2brellax.min.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.QJgafDP000.js')}}"></script><script>eval(mod_pagespeed_A$aEujBpjM);</script>
                         <script>eval(mod_pagespeed_ieg8uNb8v3);</script>
@@ -696,6 +697,7 @@
                             gtag('config', 'UA-23581568-13');
                         </script>
                         <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b7132206b574834","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.11.0","si":100}' crossorigin="anonymous"></script>
+                        
                     </body>
                     
                     <!-- Mirrored from preview.colorlib.com/theme/lovecare/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Dec 2021 02:41:35 GMT -->

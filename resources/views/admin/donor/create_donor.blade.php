@@ -1,5 +1,6 @@
-@extends('master')
+@extends('website.master')
 @section('content')
+   <div class="container-xl">
     <h2>Donor Registration Form </h2>
     <hr>
     @if(session()->has('success'))
@@ -79,7 +80,11 @@
             <div class="form-group">
               <label for="occupation" style="font-size:20px;"><b>Occupation</label></b>
               <input type="text" class="form-control" id="occupation"  placeholder="Enter Occupation" name="occupation">
-             
+            </div>
+
+            <div class="form-group">
+              <label for="occupation" style="font-size:20px;"><b>Password</label></b>
+              <input type="password" name="password" class="form-control" id="occupation"  placeholder="Enter Occupation" name="occupation">
             </div>
   
             <div class="mb-3">
@@ -97,9 +102,10 @@
           
           <button type="submit" class="btn btn-success">Register</button>
         
-          <div class="form-group">
+          {{-- <div class="form-group">
               <p><b>Already have an account? </b><a href="#"><button type="submit" class="btn btn-info">Sign In</button></a>.</p>
-            </div>
+            </div> --}}
     
   </form> 
+   </div>
 @endsection
