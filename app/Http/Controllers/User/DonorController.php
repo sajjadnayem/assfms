@@ -9,10 +9,6 @@ use App\Http\Controllers\Controller;
 
 class DonorController extends Controller
 {
-    // public function DonorProfile()
-    // {
-    //     return view('admin.donor.donor-profile');
-    // }
     public function Donation()
     {
         return view('admin.donor.donation');
@@ -57,15 +53,19 @@ class DonorController extends Controller
         Donation::find($donation_id)->delete();
         return redirect()->back()->with('success','Donation info has been deleted');
     }
-    // public function CreateDonor()
-    // {
-    //     return view('admin.donor.create_donor');
-    // }
-    // public function ViewDonorProfile()
-    // {
-    //     $donorlist = Donor::all();
-    //     return view('admin.donor.view_donorlist', compact('donorlist'));
-    // }
+    public function DonorProfile()
+    {
+        return view('admin.donor.donor-profile');
+    }
+    public function CreateDonor()
+    {
+        return view('admin.donor.create_donor');
+    }
+    public function ViewDonorProfile()
+    {
+        $donorlist = Donor::all();
+        return view('admin.donor.view_donorlist', compact('donorlist'));
+    }
     // public function StoreDonor(Request $request)
     // {
 //         //for image upload

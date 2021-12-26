@@ -26,7 +26,6 @@ use App\Models\Category;
 
 Route::get('/', [HomeController::class, 'Home'])->name('manage.home');
 Route::group(['prefix'=> 'user'], function(){
-
     Route::get('/', function(){
         return view('website.master');
     })->name('website');
@@ -35,11 +34,9 @@ Route::group(['prefix'=> 'user'], function(){
     Route::post('/store/donor', [UserController::class, 'StoreDonor'])->name('store.donor');
     Route::post('/donor/login', [UserController::class, 'DonorLogin'])->name('donor.login');
     Route::get('/donor/logout', [UserController::class, 'DonorLogout'])->name('donor.logout');
+    Route::get('/donor/view', [UserController::class, 'ViewDonorProfile'])->name('donor.view');
     // Route::get('/donor/create_Profile', [UserController::class, 'CreateDonor'])->name('donor.createprofile');
     // Route::get('/donor/view_profile', [UserController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
-   
-    
-
 });
 
 
@@ -59,11 +56,11 @@ Route::group(['prefix'=> 'admin'], function(){
     // Route::get('donor/registration', [DonorController::class, 'Registration']);
     Route::get('/donorlogin', [DonorController::class, 'DonorLogin']);
     Route::get('/donor/profile', [DonorController::class, 'DonorProfile'])->name('donor.profile');
-    // Route::get('/donor/create_Profile', [DonorController::class, 'CreateDonor'])->name('donor.createprofile');
-    // Route::get('/donor/view_profile', [DonorController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
-    // Route::post('/store/donor', [DonorController::class, 'StoreDonor'])->name('store.donor');
-    Route::get('/view/donorprofile/{donor_id}', [DonorController::class, 'DonorView'])->name('view.donor');
-    Route::get('/delete/donorprofile/{donor_id}',[DonorController::class,'DonorDelete'])->name('delete.donorprofile');
+    Route::get('/donor/create_Profile', [DonorController::class, 'CreateDonor'])->name('donor.createprofile');
+    Route::get('/donor/view_profile', [DonorController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
+    //Route::post('/store/donor', [DonorController::class, 'StoreDonor'])->name('store.donor');
+    Route::get('/view/donorprofile/{donor_id}', [UserController::class, 'DonorView'])->name('view.donor');
+    Route::get('/delete/donorprofile/{donor_id}',[UserController::class,'DonorDelete'])->name('delete.donorprofile');
     Route::get('/donation', [DonorController::class, 'Donation'])->name('donor.donation');
     Route::get('/create/donation', [DonorController:: class, 'CreateDonation'])->name('donor.createdonation');
     Route::get('/view/donation', [DonorController::class, 'ViewDonation'])->name('donor.viewdonation');

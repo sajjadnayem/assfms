@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
     <div class="container">
-        <div class="card" style="width: 30rem; margin-left:25%;">
+        <div class="card" style="width: 30rem; margin-left:25%; box-shadow: 10px;">
             <div class="card-body">
               <h5 class="card-title">Donor Details</h5>
               <img class="card-img rounded mx-auto d-block" src="{{url('/uploads/donors/'.$donor->image)}}" style="border-radius: 4px;" height=300px; width= "80px;" alt="donor image">

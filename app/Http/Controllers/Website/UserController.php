@@ -14,6 +14,11 @@ class UserController extends Controller
             $categorylist = Category::all();
             return view('admin.donor.create_donor', compact('categorylist'));
         }
+     public function ViewDonorProfile()
+    {
+        $userlist = User::all();
+        return view('admin.donor.view_donorlist', compact('userlist'));
+    }
         public function StoreDonor(Request $request)
         {
             //for image upload
@@ -48,6 +53,16 @@ class UserController extends Controller
                 'image'=>$image_name,
             ]);
             return redirect()->back()->with('success','Donor has registered successfully.');
+        }
+        public function DonorView($donor_id)
+        {
+            $donor = User::find($donor_id);
+            return view('admin.donor.view_donor_profile', compact('donor'));
+        }
+        public function DonorDelete($donor_id)
+        {
+            User::find($donor_id)->delete();
+            return redirect()->back()->with('success','Donor profile has been deleted');
         }
         public function DonorLogin(Request $request)
         {

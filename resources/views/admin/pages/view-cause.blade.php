@@ -28,6 +28,7 @@
                 <th scope="col">Location</th>
                 <th scope="col">Contact Number</th>
                 <th scope="col">Target Amount</th>
+                <th scope="col">Raised Amount</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
               </tr>
@@ -43,6 +44,7 @@
                         <td>{{$item->location}}</td>
                         <td>{{$item->phn_number}}</td>
                         <td>{{$item->amount}}</td>
+                        <td>{{$item->raised_amount}}</td>
                         <td><img src="{{url('/uploads/causes/'.$item->image)}}" style="border-radius:4px" width="100px" alt="causes image"></td> 
                         <td>
                             <a href="{{route('view.cause', $item->id)}}" class="btn btn-info">View</a>
