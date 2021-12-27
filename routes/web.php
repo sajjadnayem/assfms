@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\website\UserController;
 use App\Http\Controllers\Volunteer\VolunteerController;
+Use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Models\Cause;
 use App\Models\Donation;
 use App\Models\Volunteer;
@@ -34,17 +35,21 @@ Route::group(['prefix'=> 'user'], function(){
     Route::post('/store/donor', [UserController::class, 'StoreDonor'])->name('store.donor');
     Route::post('/donor/login', [UserController::class, 'DonorLogin'])->name('donor.login');
     Route::get('/donor/logout', [UserController::class, 'DonorLogout'])->name('donor.logout');
-    Route::get('/donor/view', [UserController::class, 'ViewDonorProfile'])->name('donor.view');
     // Route::get('/donor/create_Profile', [UserController::class, 'CreateDonor'])->name('donor.createprofile');
     // Route::get('/donor/view_profile', [UserController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
 });
 
+//for admin login
+Route::get('/admin/login', [AdminUserController::class, 'login'])->name('admin.login');
+Route::post('/admin/dologin', [AdminUserController::class, 'dologin'])->name('admin.dologin');
 
-Route::group(['prefix'=> 'admin'], function(){
-
+Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
     Route::get('/function', function(){
         return view('master');
     })->name('home');
+
+    Route::get('/logout', [AdminUserController::class, 'logout'])->name('admin.logout');
+
     Route::get('/', [AdminController::class, 'Cause'])->name('manage.cause');
     Route::get('/create/cause',[AdminController::class, 'CreateCause'])->name('cause.create');
     Route::get('/view/cause', [AdminController::class, 'ViewCause'])->name('cause.view');
@@ -58,6 +63,7 @@ Route::group(['prefix'=> 'admin'], function(){
     Route::get('/donor/profile', [DonorController::class, 'DonorProfile'])->name('donor.profile');
     Route::get('/donor/create_Profile', [DonorController::class, 'CreateDonor'])->name('donor.createprofile');
     Route::get('/donor/view_profile', [DonorController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
+    Route::get('/donor/view', [UserController::class, 'ViewDonorProfile'])->name('donor.view');
     //Route::post('/store/donor', [DonorController::class, 'StoreDonor'])->name('store.donor');
     Route::get('/view/donorprofile/{donor_id}', [UserController::class, 'DonorView'])->name('view.donor');
     Route::get('/delete/donorprofile/{donor_id}',[UserController::class,'DonorDelete'])->name('delete.donorprofile');
@@ -70,8 +76,7 @@ Route::group(['prefix'=> 'admin'], function(){
     
     
 
-
-
+    //For volunteer Controller
     Route::get('volunteerprofile', [VolunteerController:: class, 'VolunteerProfile'])->name('volunteer.profile');
     Route::get('/create/volunteer', [VolunteerController::class, 'CreateVolunteer'])->name('create.volunteer');
     Route::get('/view/volunteer', [VolunteerController::class, 'ViewVolunteer'])->name('view.volunteer');
