@@ -37,6 +37,8 @@ Route::group(['prefix'=> 'user'], function(){
     Route::get('/donor/logout', [UserController::class, 'DonorLogout'])->name('donor.logout');
     // Route::get('/donor/create_Profile', [UserController::class, 'CreateDonor'])->name('donor.createprofile');
     // Route::get('/donor/view_profile', [UserController::class, 'ViewDonorProfile'])->name('donor.viewprofile');
+
+    Route::get('/cause/view/details/{cause_id}', [HomeController::class, 'CauseDetails'])->name('cause.details');
 });
 
 //for admin login
@@ -44,7 +46,7 @@ Route::get('/admin/login', [AdminUserController::class, 'login'])->name('admin.l
 Route::post('/admin/dologin', [AdminUserController::class, 'dologin'])->name('admin.dologin');
 
 Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
-    Route::get('/function', function(){
+    Route::get('/dashboard', function(){
         return view('master');
     })->name('home');
 

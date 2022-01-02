@@ -22,7 +22,7 @@
 </head>
 <body style="position: relative;">
     {{-- style="position: static; --}}
-    <nav class="navbar navbar-expand-lg  ftco-navbar-light" style=" top:0px;">
+    <nav class="navbar navbar-expand-lg  ftco-navbar-light" style=" top:0px; margin-bottom:30px;">
         @include('website.fixed.header')
     </nav>
     

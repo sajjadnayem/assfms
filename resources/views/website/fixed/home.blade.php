@@ -49,13 +49,16 @@
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
                                             <select name="" id="" class="form-control">
-                                                <option value="">Food</option>
+                                                @foreach ($crisislist as $key=>$item)
+                                                    <option value="">{{$item->name}}</option>
+                                                @endforeach
+                                                {{-- <option value="">Food</option>
                                                 <option value="">Medical Health</option>
                                                 <option value="">Education</option>
                                                 <option value="">Environment</option>
                                                 <option value="">Shelter/Home</option>
                                                 <option value="">Clothes</option>
-                                                <option value="">Other</option>
+                                                <option value="">Other</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -176,6 +179,8 @@
         </div>
     </div>
 </section>
+
+{{-- displaing featured causes --}}
 <section class="ftco-causes ftco-section bg-light">
     <div class="container-xl">
         <div class="row justify-content-center">
@@ -187,7 +192,36 @@
         <div class="row">
             <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <div class="carousel-causes">
+                    @foreach ($crisislist as $key=>$item)
                     <div class="item">
+                        <div class="causes-wrap">
+                            <a href="images/cause-1.jpg" class="img d-flex align-items-end justify-content-center glightbox" style="background-image:url({{url('/uploads/causes/'.$item->image)}}")">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-search"></span></div>
+                                <a href="{{route('cause.details', $item->id)}}"><span class="sub">{{$item->name}}</span></a>
+                            </a>
+                            <div class="text">
+                                <div class="desc">
+                                    <h2 class="mb-3">Give Food to Homeless Children</h2>
+                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                                </div>
+                                <div class="progress-desc">
+                                    <div class="progress-wrap">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                                <span>100%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex raised-goal justify-content-between">
+                                        <span>Raised: <strong>{{$item->amount}}</strong></span>
+                                        <span class="goal">Goal: <strong>{{$item->raised_amount}}</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    {{-- <div class="item">
                         <div class="causes-wrap">
                             <a href="images/cause-1.jpg" class="img d-flex align-items-end justify-content-center glightbox" style="background-image:url(frontend/images/xcause-1.jpg.pagespeed.ic.fItOPS5x_l.jpg)">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-search"></span></div>
@@ -294,12 +328,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
 <section class="ftco-image img" style="background-image: url(frontend/images/bg_2.jpg);">
     <div class="overlay"></div>
     <div class="container">
@@ -312,6 +349,8 @@
         </div>
     </div>
 </section>
+
+
 <section class="ftco-section">
     <div class="container-fluid">
         <div class="row justify-content-center pb-4">
@@ -321,13 +360,14 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($volunteerlist as $key=>$item)
             <div class="col-md-6 col-lg-3" data-aos="flip-right" data-aos-delay="100" data-aos-duration="1000">
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url(frontend/images/staff-1.jpg);"></div>
+                        <div class="img align-self-stretch" style="background-image: url({{url('/uploads/volunteers/'.$item->image)}});"></div>
                     </div>
                     <div class="text text-center">
-                        <h3 class="mb-2">Jason Smith</h3>
+                        <h3 class="mb-2">{{$item->name}}</h3>
                         <span class="position mb-2">Volunteer</span>
                         <div class="faded">
                             <ul class="ftco-social text-center">
@@ -341,7 +381,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3" data-aos="flip-right" data-aos-delay="100" data-aos-duration="1000">
+            @endforeach
+            {{-- <div class="col-md-6 col-lg-3" data-aos="flip-right" data-aos-delay="100" data-aos-duration="1000">
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         <div class="img align-self-stretch" style="background-image: url(frontend/images/staff-2.jpg);"></div>
@@ -400,7 +441,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
