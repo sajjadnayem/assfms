@@ -198,6 +198,7 @@
                             <a href="images/cause-1.jpg" class="img d-flex align-items-end justify-content-center glightbox" style="background-image:url({{url('/uploads/causes/'.$item->image)}}")">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-search"></span></div>
                                 <a href="{{route('cause.details', $item->id)}}"><span class="sub">{{$item->name}}</span></a>
+                                {{-- <span class="sub"><a href="{{route('cause.details', $item->id)}}">{{$item->name}}</a></span> --}}
                             </a>
                             <div class="text">
                                 <div class="desc">
