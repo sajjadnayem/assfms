@@ -20,7 +20,8 @@
     margin-bottom: 20px;
   }
 </style>
-<div class="container">
+<div id="CauseToPrint">
+  <div class="container">
     <div class="card" style="">
         <div class="card-body">
           <h5 class="card-title">Cause Details</h5>
@@ -35,4 +36,17 @@
         </div>
       </div>
 </div>
+<button class="btn btn-primary" type="submit" onClick="PrintDiv('CauseToPrint');" value="Print">Print</button>
+</div>
 @endsection
+
+{{-- js script for printin --}}
+<script language="javascript">
+  function PrintDiv(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
+      document.body.innerHTML = printContents;
+      window.print();
+      document.body.innerHTML = originalContents;
+  }
+  </script>

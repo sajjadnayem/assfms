@@ -20,7 +20,7 @@
 @endif
 <hr>
     <div style="overflow-x: scroll">
-      <table class="table table-hover table-light" style="width: 100%"> 
+      <table class="table table-hover table-light" style="width: 100%; Text-align: Center"> 
         <thead>
           <tr>
             <th scope="col">ID</th>
