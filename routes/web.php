@@ -47,17 +47,21 @@ Route::post('/admin/dologin', [AdminUserController::class, 'dologin'])->name('ad
 
 Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
     Route::get('/dashboard', function(){
-        return view('master');
+        return view('admin.pages.dashboard');
     })->name('home');
 
     Route::get('/logout', [AdminUserController::class, 'logout'])->name('admin.logout');
 
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/', [AdminController::class, 'Cause'])->name('manage.cause');
     Route::get('/create/cause',[AdminController::class, 'CreateCause'])->name('cause.create');
     Route::get('/view/cause', [AdminController::class, 'ViewCause'])->name('cause.view');
     Route::post('/cause/store', [AdminController:: class, 'StoreCause'])->name('cause.store');
     Route::get('/cause/view/details/{cause_id}',[AdminController::class,'CauseView'])->name('view.cause');
+    Route::get('/cause/edit/{cause_id}', [AdminController::class, 'EditCause'])->name('cause.edit');
+    Route::put('/cause/update/{cause_id}',[AdminController::class,'CauseUpdate'])->name('cause.update');
     Route::get('/cause/delete/{cause_id}',[AdminController::class,'DeleteCause'])->name('delete.cause');
+    
 
 
     // Route::get('donor/registration', [DonorController::class, 'Registration']);

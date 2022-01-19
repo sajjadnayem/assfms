@@ -48,7 +48,7 @@
                         <td><img src="{{url('/uploads/causes/'.$item->image)}}" style="border-radius:4px" width="100px" alt="causes image"></td> 
                         <td>
                             <a href="{{route('view.cause', $item->id)}}" class="btn btn-info">View</a>
-                            <a href="" class="btn btn-success">Update</a>
+                            <a href="{{route('cause.edit', $item->id)}}" class="btn btn-success">Edit</a>
                             <a href="{{route('delete.cause', $item->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                         </tr>   
